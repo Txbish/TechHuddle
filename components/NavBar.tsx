@@ -6,7 +6,7 @@ const NavBar = () => {
       <nav>
         <Link href="/" className="logo">
           <Image src="/icons/logo.png" alt="Logo" width={24} height={24} />
-          <p>DevEvent</p>
+          <p>TechHuddle</p>
         </Link>
         <ul>
           <Link href="/">Home</Link>
