@@ -780,7 +780,7 @@ export interface BookingDelegate<ExtArgs extends runtime.Types.Extensions.Intern
   /**
    * Create or update one Booking.
    * @param {BookingUpsertArgs} args - Arguments to update or create a Booking.
-   *\ @example
+   * @example
    * // Update or create a Booking
    * const booking = await prisma.booking.upsert({
    *   create: {
