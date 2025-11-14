@@ -37,11 +37,13 @@ export async function POST(req: NextRequest) {
         )
         .end(buffer);
     });
-
     event.image = uploadResult.secure_url;
+    const tags=JSON.parse((event.tags) as string)
+
+    const agenda=JSON.parse((event.agenda) as string)
 
     // --- Save to Prisma ---
-    const createdEvent = await prisma.event.create({ data: event });
+    const createdEvent = await prisma.event.create({ data: {...event,tags:tags,agenda:agenda} });
 
     return NextResponse.json(
       { message: "Event Created Successfully", event: createdEvent },
