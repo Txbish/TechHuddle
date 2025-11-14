@@ -58,3 +58,18 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function GET(req:NextRequest,res:NextResponse) {
+    try {
+        const events = await prisma.event.findMany({
+  orderBy: {
+    createdAt: "desc",
+  },
+});
+return NextResponse.json({message:"Events Fetched Successfully",events},{status:200});
+        
+    } catch (error) {
+        return NextResponse.json({message:"Event Fetching Failed",error:error},{status:500});
+    }
+    
+}
